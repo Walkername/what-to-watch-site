@@ -1,8 +1,13 @@
-import { FilmCard } from '../../components/film-card/film-card';
 import { Footer } from '../../components/footer/footer';
 import { Header } from '../../components/header/header';
+import { MovieList } from '../../components/movie-list/movie-list';
+import { MovieType } from '../../types/movie-type';
 
-const MoviePageDetails = (): JSX.Element => (
+type MoviePageDetailsProps = {
+  movieList: MovieType[];
+};
+
+const MoviePageDetails = (props: MoviePageDetailsProps): JSX.Element => (
   <body>
     <section className="film-card film-card--full">
       <div className="film-card__hero">
@@ -113,22 +118,7 @@ const MoviePageDetails = (): JSX.Element => (
         <h2 className="catalog__title">More like this</h2>
 
         <div className="catalog__films-list">
-          <FilmCard
-            srcFilm='img/fantastic-beasts-the-crimes-of-grindelwald.jpg'
-            nameFilm='Fantastic Beasts: The Crimes of Grindelwald'
-          />
-          <FilmCard
-            srcFilm='img/bohemian-rhapsody.jpg'
-            nameFilm='Bohemian Rhapsody'
-          />
-          <FilmCard
-            srcFilm='img/macbeth.jpg'
-            nameFilm='Macbeth'
-          />
-          <FilmCard
-            srcFilm='img/aviator.jpg'
-            nameFilm='Aviator'
-          />
+          <MovieList movieList={props.movieList} />
         </div>
       </section>
 
