@@ -1,8 +1,13 @@
-import { FilmCard } from '../../components/film-card/film-card';
 import { Footer } from '../../components/footer/footer';
 import { PromoFilm } from '../../components/promo-film/promo-film';
+import { MovieType } from '../../types/movie-type';
+import { MovieList } from '../../components/movie-list/movie-list';
 
-const Main = (): JSX.Element => (
+type MainPageProps = {
+  movieList: MovieType[];
+};
+
+const Main = (props: MainPageProps): JSX.Element => (
   <body>
     <PromoFilm
       name="The Grand Budapest Hotel"
@@ -50,85 +55,7 @@ const Main = (): JSX.Element => (
         </ul>
 
         <div className="catalog__films-list">
-          <FilmCard
-            srcFilm="img/fantastic-beasts-the-crimes-of-grindelwald.jpg" nameFilm="Fantastic Beasts: The Crimes of Grindelwald"
-          />
-          <FilmCard
-            srcFilm="img/bohemian-rhapsody.jpg"
-            nameFilm="Bohemian Rhapsody"
-          />
-          <FilmCard
-            srcFilm="img/macbeth.jpg"
-            nameFilm="Macbeth"
-          />
-          <FilmCard
-            srcFilm="img/aviator.jpg"
-            nameFilm="Aviator"
-          />
-          <FilmCard
-            srcFilm="img/we-need-to-talk-about-kevin.jpg"
-            nameFilm="We need to talk about Kevin"
-          />
-          <FilmCard
-            srcFilm="img/what-we-do-in-the-shadows.jpg"
-            nameFilm="What We Do in the Shadows"
-          />
-          <FilmCard
-            srcFilm="img/revenant.jpg"
-            nameFilm="Revenant"
-          />
-          <FilmCard
-            srcFilm="img/johnny-english.jpg"
-            nameFilm="Johnny English"
-          />
-          <FilmCard
-            srcFilm="img/shutter-island.jpg"
-            nameFilm="Shutter Island"
-          />
-          <FilmCard
-            srcFilm="img/pulp-fiction.jpg"
-            nameFilm="Pulp Fiction"
-          />
-          <FilmCard
-            srcFilm="img/no-country-for-old-men.jpg"
-            nameFilm="No Country for Old Men"
-          />
-          <FilmCard
-            srcFilm="img/snatch.jpg"
-            nameFilm="Snatch"
-          />
-          <FilmCard
-            srcFilm="img/moonrise-kingdom.jpg"
-            nameFilm="Moonrise Kingdom"
-          />
-          <FilmCard
-            srcFilm="img/seven-years-in-tibet.jpg"
-            nameFilm="Seven Years in Tibet"
-          />
-          <FilmCard
-            srcFilm="img/midnight-special.jpg"
-            nameFilm="Midnight Special"
-          />
-          <FilmCard
-            srcFilm="img/war-of-the-worlds.jpg"
-            nameFilm="War of the Worlds"
-          />
-          <FilmCard
-            srcFilm="img/dardjeeling-limited.jpg"
-            nameFilm="Dardjeeling Limited"
-          />
-          <FilmCard
-            srcFilm="img/orlando.jpg"
-            nameFilm="Orlando"
-          />
-          <FilmCard
-            srcFilm="img/mindhunter.jpg"
-            nameFilm="Mindhunter"
-          />
-          <FilmCard
-            srcFilm="img\midnight-special.jpg"
-            nameFilm="Midnight Special"
-          />
+          <MovieList movieList={props.movieList}/>
         </div>
 
         <div className="catalog__more">
